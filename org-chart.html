@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding for text display -->
+    <meta charset="UTF-8">
+    <!-- Responsive viewport for mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Browser tab title -->
+    <title>Organization - SLSU CIT Department</title>
+    <!-- External stylesheet link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fixed navigation header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- University and department logos -->
+            <div class="logos">
+                <img src="image source/slsulogo.png" alt="SLSU Logo" class="logo">
+                <img src="image source/industrial technology.png" alt="CIT Logo" class="logo">
+                <div class="logo-text">
+                    <span class="logo-title">Southern Luzon State University</span>
+                    <span class="logo-subtitle">College of Industrial Technology</span>
+                </div>
+            </div>
+            
+            <!-- Mobile hamburger menu button -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Main navigation links -->
+            <nav class="nav" id="navigation" role="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="announcements.html">Announcements</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="org-chart.html" class="active">Organization</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Organizational chart section -->
+        <section id="organization" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title animate-text">Organizational Structure</h2>
+                <p class="org-subtitle animate-text">College of Industrial Technology Leadership Hierarchy</p>
+                
+                <!-- Organizational chart container -->
+                <div class="org-chart">
+                    
+                    <!-- Level 1: Dean -->
+                    <div class="org-level">
+                        <div class="org-box dean-box animate-text">
+                            <div class="org-position">Dean</div>
+                            <div class="org-name">Dr. Maria Santos</div>
+                            <div class="org-dept">College of Industrial Technology</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Connector line from dean to department heads -->
+                    <div class="org-connector"></div>
+                    
+                    <!-- Level 2: Department Heads -->
+                    <div class="org-level dept-heads">
+                        <!-- Computer Technology Department -->
+                        <div class="org-box dept-box animate-text">
+                            <div class="org-position">Department Head</div>
+                            <div class="org-name">Prof. Juan Cruz</div>
+                            <div class="org-dept">Computer Technology</div>
+                        </div>
+                        
+                        <!-- Automotive Technology Department -->
+                        <div class="org-box dept-box animate-text">
+                            <div class="org-position">Department Head</div>
+                            <div class="org-name">Engr. Pedro Reyes</div>
+                            <div class="org-dept">Automotive Technology</div>
+                        </div>
+                        
+                        <!-- Electronics Technology Department -->
+                        <div class="org-box dept-box animate-text">
+                            <div class="org-position">Department Head</div>
+                            <div class="org-name">Engr. Rosa Mendoza</div>
+                            <div class="org-dept">Electronics Technology</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Connector line from department heads to coordinators -->
+                    <div class="org-connector"></div>
+                    
+                    <!-- Level 3: Program Coordinators -->
+                    <div class="org-level coordinators">
+                        <!-- Laboratory Coordinator -->
+                        <div class="org-box coord-box animate-text">
+                            <div class="org-position">Laboratory Coordinator</div>
+                            <div class="org-name">Prof. Ana Garcia</div>
+                            <div class="org-dept">CPT & MIS Labs</div>
+                        </div>
+                        
+                        <!-- Research Coordinator -->
+                        <div class="org-box coord-box animate-text">
+                            <div class="org-position">Research Coordinator</div>
+                            <div class="org-name">Dr. Carlos Dela Cruz</div>
+                            <div class="org-dept">Innovation & Development</div>
+                        </div>
+                        
+                        <!-- Student Affairs Coordinator -->
+                        <div class="org-box coord-box animate-text">
+                            <div class="org-position">Student Affairs</div>
+                            <div class="org-name">Ms. Linda Torres</div>
+                            <div class="org-dept">Student Services</div>
+                        </div>
+                        
+                        <!-- Extension Coordinator -->
+                        <div class="org-box coord-box animate-text">
+                            <div class="org-position">Extension Coordinator</div>
+                            <div class="org-name">Prof. Ramon Silva</div>
+                            <div class="org-dept">Community Outreach</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Site footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 SLSU Main Campus Lucban, Quezon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

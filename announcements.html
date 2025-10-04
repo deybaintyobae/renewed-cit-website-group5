@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding for text display -->
+    <meta charset="UTF-8">
+    <!-- Responsive viewport for mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Browser tab title -->
+    <title>Announcements - SLSU CIT Department</title>
+    <!-- External stylesheet link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fixed navigation header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- University and department logos -->
+            <div class="logos">
+                <img src="image source/slsulogo.png" alt="SLSU Logo" class="logo">
+                <img src="image source/industrial technology.png" alt="CIT Logo" class="logo">
+                <div class="logo-text">
+                    <span class="logo-title">Southern Luzon State University</span>
+                    <span class="logo-subtitle">College of Industrial Technology</span>
+                </div>
+            </div>
+            
+            <!-- Mobile hamburger menu button -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Main navigation links -->
+            <nav class="nav" id="navigation" role="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="announcements.html" class="active">Announcements</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="org-chart.html">Organization</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Announcements slideshow section -->
+        <section id="announcements" class="announcements-section">
+            <div class="container">
+                <h2 class="announcements-title">📣 Warriors Announcement!! 📣</h2>
+                
+                <!-- Slideshow container with multiple slides -->
+                <div class="slideshow-container">
+                    
+                    <!-- First announcement slide -->
+                    <div class="slide active">
+                        <div class="slide-image">
+                            <img src="image source/elab.png" alt="Enrollment Announcement">
+                        </div>
+                        <div class="slide-content">
+                            <div class="slide-badge">New</div>
+                            <h3>Enrollment for 2nd Semester 2025</h3>
+                            <p>Registration is now open for the 2nd semester. Visit the registrar's office or apply online through our student portal.</p>
+                            <span class="slide-date">January 15, 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- Second announcement slide -->
+                    <div class="slide">
+                        <div class="slide-image">
+                            <img src="image source/lab.png" alt="Competition Winners">
+                        </div>
+                        <div class="slide-content">
+                            <div class="slide-badge">Achievement</div>
+                            <h3>IT Competition Winners</h3>
+                            <p>Congratulations to our Computer Technology students for winning 1st place in the Regional Programming Contest!</p>
+                            <span class="slide-date">January 10, 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- Third announcement slide -->
+                    <div class="slide">
+                        <div class="slide-image">
+                            <img src="image source/slsubg.png" alt="Laboratory Upgrade">
+                        </div>
+                        <div class="slide-content">
+                            <div class="slide-badge">Upgrade</div>
+                            <h3>New Laboratory Equipment</h3>
+                            <p>Our CPT Lab has been upgraded with state-of-the-art computers and software for enhanced learning experience.</p>
+                            <span class="slide-date">January 8, 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- Previous slide button -->
+                    <button class="slide-nav prev" onclick="changeSlide(-1)" aria-label="Previous announcement">←</button>
+                    <!-- Next slide button -->
+                    <button class="slide-nav next" onclick="changeSlide(1)" aria-label="Next announcement">→</button>
+                </div>
+
+                <!-- Slide position indicators -->
+                <div class="slide-indicators">
+                    <span class="indicator active" onclick="currentSlide(1)"></span>
+                    <span class="indicator" onclick="currentSlide(2)"></span>
+                    <span class="indicator" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Site footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 SLSU Main Campus Lucban, Quezon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

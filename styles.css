@@ -1,0 +1,1558 @@
+/* 
+===============================================
+SLSU COLLEGE OF INDUSTRIAL TECHNOLOGY STYLESHEET
+Beautiful Blue Theme with Multiple Hues
+Updated Version 2.0
+===============================================
+*/
+
+/* 
+BLUE COLOR PALETTE
+- Primary: #1e3a8a (Deep Royal Blue)
+- Secondary: #3b82f6 (Bright Blue)
+- Light: #60a5fa (Sky Blue)
+- Accent: #2563eb (Medium Blue)
+- Dark: #1e40af (Navy Blue)
+- Pale: #dbeafe (Ice Blue)
+===============================================
+*/
+
+/* BASE RESET - Remove default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY - Main document styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+    overflow-x: hidden;
+    background: #f8fafc;
+}
+
+/* CONTAINER - Content width wrapper */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 
+===============================================
+HEADER AND NAVIGATION SECTION
+===============================================
+*/
+
+/* HEADER - Fixed top navigation bar */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 2px 20px rgba(30, 58, 138, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* HEADER CONTAINER - Inner header layout */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGOS - University branding section */
+.logos {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* LOGO - Individual logo images */
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* LOGO TEXT - Text beside logos */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* LOGO TITLE - Main university name */
+.logo-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    line-height: 1.2;
+}
+
+/* LOGO SUBTITLE - Department name */
+.logo-subtitle {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* MENU TOGGLE - Mobile hamburger button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* MENU TOGGLE LINES - Hamburger bars */
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #1e3a8a;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* MENU TOGGLE ACTIVE - Transform to X */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* NAV - Navigation menu container */
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+/* NAV LINKS - Navigation link styling */
+.nav a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* NAV LINK UNDERLINE - Animated underline effect */
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    transition: width 0.3s ease;
+}
+
+/* NAV LINK HOVER - Hover state effects */
+.nav a:hover::after {
+    width: 100%;
+}
+.nav a:hover {
+    color: #3b82f6;
+}
+
+/* NAV LINK ACTIVE - Currently active page */
+.nav a.active {
+    color: #1e3a8a;
+    font-weight: 600;
+}
+.nav a.active::after {
+    width: 100%;
+    background: linear-gradient(90deg, #1e3a8a, #2563eb);
+}
+
+/* 
+===============================================
+HERO SECTION - Homepage Banner
+===============================================
+*/
+
+/* HERO - Full-screen banner */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.8)), 
+                url('image\ source/slsubg.png') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* HERO BG - Animated background pattern */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+/* HERO CONTENT - Text and button container */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/* HERO TITLE - Main heading */
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* HERO SUBTITLE - Description text */
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+/* HERO BUTTONS - CTA button container */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 
+===============================================
+BUTTON STYLES - All button variations
+===============================================
+*/
+
+/* BTN - Base button styling */
+.btn {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* BTN PRIMARY - Main action button */
+.btn.primary {
+    background: linear-gradient(135deg, #ffffff, #f1f5f9);
+    color: #1e3a8a;
+    border: 2px solid transparent;
+}
+
+.btn.primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transition: left 0.5s ease;
+    z-index: 0;
+}
+
+.btn.primary:hover::before {
+    left: 100%;
+}
+
+.btn.primary:hover {
+    background: linear-gradient(135deg, #f1f5f9, #dbeafe);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.3);
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+/* BTN SECONDARY - Secondary action button */
+.btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.btn.secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(96, 165, 250, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.btn.secondary:hover::before {
+    opacity: 1;
+}
+
+.btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1e3a8a;
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* BTN ACTIVE - Button pressed state */
+.btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* 
+===============================================
+SECTION LAYOUT - Common section styles
+===============================================
+*/
+
+/* SECTION - Base section padding */
+.section {
+    padding: 100px 0;
+}
+
+/* BG LIGHT - Alternating section background */
+.bg-light {
+    background: linear-gradient(135deg, #f0f9ff, #ffffff);
+}
+
+/* SECTION TITLE - Main section headings */
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #1e3a8a;
+    font-weight: 700;
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+/* SECTION TITLE UNDERLINE - Decorative element */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 2px;
+}
+
+/* 
+===============================================
+ANNOUNCEMENTS SECTION
+===============================================
+*/
+
+/* ANNOUNCEMENTS SECTION - Main container */
+.announcements-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ANNOUNCEMENTS BG PATTERN - Background overlay */
+.announcements-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="60" height="60" fill="url(%23dots)"/></svg>');
+    opacity: 0.5;
+}
+
+/* ANNOUNCEMENTS TITLE - Section heading */
+.announcements-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: white;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* SLIDESHOW CONTAINER - Slides wrapper */
+.slideshow-container {
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+/* SLIDE - Individual announcement slide */
+.slide {
+    display: none;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.slide.active {
+    display: flex;
+}
+
+/* SLIDE IN ANIMATION - Entry animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* SLIDE IMAGE - Image container */
+.slide-image {
+    flex: 0 0 40%;
+    min-height: 320px;
+    background: #f3f4f6;
+}
+
+.slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.slide:hover .slide-image img {
+    transform: scale(1.05);
+}
+
+/* SLIDE CONTENT - Text content area */
+.slide-content {
+    flex: 1;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+}
+
+/* SLIDE BADGE - Status label */
+.slide-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    width: fit-content;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    letter-spacing: 0.5px;
+}
+
+/* SLIDE TITLE - Announcement heading */
+.slide-content h3 {
+    font-size: 2rem;
+    color: #1f2937;
+    margin-bottom: 18px;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* SLIDE DESCRIPTION - Announcement text */
+.slide-content p {
+    color: #64748b;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* SLIDE DATE - Publication date */
+.slide-date {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* SLIDE NAV - Navigation arrow buttons */
+.slide-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+    color: #3b82f6;
+    border: 2px solid rgba(59, 130, 246, 0.2);
+    font-size: 28px;
+    padding: 18px 22px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.slide-nav:hover {
+    background: linear-gradient(135deg, white, #f8fafc);
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.3);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.slide-nav.prev {
+    left: 25px;
+}
+
+.slide-nav.next {
+    right: 25px;
+}
+
+/* SLIDE INDICATORS - Position dots */
+.slide-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+/* INDICATOR - Individual dot */
+.indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.4);
+    border-color: white;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+/* 
+===============================================
+ABOUT SECTION - Vision & Mission
+===============================================
+*/
+
+/* VISION MISSION GRID - 2-column layout */
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 50px;
+    margin-top: 80px;
+}
+
+/* VM CARD - Vision/Mission cards */
+.vm-card {
+    background: linear-gradient(135deg, #dbeafe, #ffffff);
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(30, 58, 138, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(59, 130, 246, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* VM CARD GRADIENT OVERLAY */
+.vm-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa, #2563eb);
+}
+
+/* VM ICON - Decorative icon */
+.vm-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.vm-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 70px rgba(30, 58, 138, 0.2);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.vm-card h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.vm-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #475569;
+}
+
+/* GOALS GRID - Goals layout */
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 80px;
+}
+
+/* GOAL CARD - Individual goal cards */
+.goal-card {
+    background: linear-gradient(135deg, #ffffff, #f0f9ff);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(59, 130, 246, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* GOAL NUMBER - Large decorative number */
+.goal-number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: rgba(59, 130, 246, 0.15);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    line-height: 1;
+}
+
+.goal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+.goal-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #2563eb;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.goal-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #64748b;
+    position: relative;
+    z-index: 1;
+}
+
+/* 
+===============================================
+PROGRAMS SECTION
+===============================================
+*/
+
+/* PROGRAMS GRID - Programs layout */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 45px;
+    margin-top: 80px;
+}
+
+/* PROGRAM CARD - Program information card */
+.program-card {
+    background: linear-gradient(135deg, #ffffff, #f0f9ff);
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(59, 130, 246, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* PROGRAM ICON - Decorative program icon */
+.program-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.program-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.program-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.15);
+}
+
+.program-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    color: #1e3a8a;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.program-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #64748b;
+}
+
+/* SPECIALIZATIONS LIST - Program tracks */
+.specializations-list {
+    margin-top: 25px;
+    padding-left: 25px;
+}
+
+.specializations-list li {
+    margin-bottom: 10px;
+    color: #475569;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* 
+===============================================
+FACULTY SECTION
+===============================================
+*/
+
+/* FACULTY GRID - Faculty members layout */
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 45px;
+    margin-top: 80px;
+}
+
+/* FACULTY CARD - Individual faculty profile */
+.faculty-card {
+    background: linear-gradient(135deg, #ffffff, #f0f9ff);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.1);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(59, 130, 246, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.faculty-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.faculty-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.15);
+}
+
+/* FACULTY IMAGE - Profile photo */
+.faculty-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3b82f6, #60a5fa);
+    margin: 0 auto 25px;
+    object-fit: cover;
+    border: 4px solid rgba(59, 130, 246, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+}
+
+.faculty-card:hover .faculty-image {
+    transform: scale(1.05);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.3);
+}
+
+.faculty-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #1f2937;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.faculty-card .title {
+    color: #3b82f6;
+    font-weight: 600;
+    margin-bottom: 18px;
+    font-size: 1.05rem;
+}
+
+.faculty-card p:last-child {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* 
+===============================================
+ORGANIZATIONAL CHART SECTION
+===============================================
+*/
+
+/* ORG SUBTITLE - Chart description */
+.org-subtitle {
+    text-align: center;
+    color: #64748b;
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+}
+
+/* ORG CHART - Main chart container */
+.org-chart {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ORG LEVEL - Each hierarchical level */
+.org-level {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* ORG BOX - Individual position box */
+.org-box {
+    background: linear-gradient(135deg, #ffffff, #f0f9ff);
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+    min-width: 250px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(59, 130, 246, 0.1);
+    position: relative;
+}
+
+.org-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.25);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* DEAN BOX - Top level (Dean) */
+.dean-box {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: white;
+    border: none;
+    box-shadow: 0 15px 50px rgba(30, 58, 138, 0.3);
+}
+
+/* DEPT BOX - Department heads */
+.dept-box {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+    border: none;
+}
+
+/* COORD BOX - Coordinators */
+.coord-box {
+    background: linear-gradient(135deg, #60a5fa, #93c5fd);
+    color: #1e3a8a;
+}
+
+/* ORG POSITION - Position title */
+.org-position {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+/* ORG NAME - Person name */
+.org-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* ORG DEPT - Department name */
+.org-dept {
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+/* ORG CONNECTOR - Connecting lines */
+.org-connector {
+    height: 40px;
+    width: 2px;
+    background: linear-gradient(180deg, #3b82f6, #60a5fa);
+    margin: 0 auto 20px;
+}
+
+/* 
+===============================================
+FACILITIES SECTION
+===============================================
+*/
+
+/* FACILITIES GRID - Facilities layout */
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 80px;
+}
+
+/* FACILITY CARD - Individual facility */
+.facility-card {
+    padding: 40px;
+    background: linear-gradient(135deg, #ffffff, #f0f9ff);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(59, 130, 246, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* FACILITY ICON - Decorative icon */
+.facility-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.facility-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.facility-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.15);
+}
+
+.facility-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+    color: #1e3a8a;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.facility-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #64748b;
+}
+
+/* 
+===============================================
+PHOTO GALLERY SECTION
+===============================================
+*/
+
+/* PHOTO SHOWCASE - Main gallery container */
+.photo-showcase {
+    padding: 140px 0;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    position: relative;
+    overflow: hidden;
+}
+
+/* PHOTO SHOWCASE BG PATTERN */
+.photo-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><defs><pattern id="hexagons" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><polygon points="20,5 30,15 30,25 20,35 10,25 10,15" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="80" height="80" fill="url(%23hexagons)"/></svg>');
+    opacity: 0.6;
+}
+
+/* GALLERY TITLE - Override for white */
+.photo-showcase .section-title {
+    color: white !important;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+/* GALLERY SUBTITLE - Description */
+.gallery-subtitle {
+    text-align: center;
+    color: white !important;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+}
+
+/* PHOTO GRID - Gallery layout */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+/* PHOTO CARD - Individual photo card */
+.photo-card {
+    height: 300px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(45deg, #3b82f6, #2563eb, #1e3a8a);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* PHOTO IMAGE CONTAINER - Image wrapper */
+.photo-image-container {
+    width: 100%;
+    height: 100%;
+}
+
+.photo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* PHOTO CATEGORY - Category badge */
+.photo-category {
+    display: inline-block;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* PHOTO OVERLAY - Hover overlay content */
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    padding: 40px 25px 25px;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photo-overlay h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.photo-overlay p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* PHOTO CARD HOVER - Show overlay */
+.photo-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.photo-card:hover .photo-overlay {
+    transform: translateY(0);
+}
+
+/* 
+===============================================
+CONTACT SECTION
+===============================================
+*/
+
+/* CONTACT GRID - 2-column layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 60px;
+    align-items: start;
+}
+
+/* CONTACT INFO - Contact details */
+.contact-info h3 {
+    font-size: 1.8rem;
+    color: #1e3a8a;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* CONTACT ITEM - Individual contact detail */
+.contact-item {
+    margin-bottom: 25px;
+}
+
+.contact-item strong {
+    color: #3b82f6;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.contact-item p {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* CONTACT FORM - Message form */
+.contact-form h3 {
+    font-size: 1.8rem;
+    color: #1e3a8a;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* FORM INPUTS - Input and textarea */
+.contact-form input,
+.contact-form textarea {
+    padding: 18px;
+    border: 2px solid #e0f2fe;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    background: #f0f9ff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+    background: white;
+    transform: translateY(-2px);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* 
+===============================================
+FOOTER SECTION
+===============================================
+*/
+
+/* FOOTER - Site footer */
+.footer {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="footer-pattern" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="60" height="60" fill="url(%23footer-pattern)"/></svg>');
+    opacity: 0.3;
+}
+
+.footer p {
+    position: relative;
+    z-index: 1;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* 
+===============================================
+ANIMATION CLASSES
+===============================================
+*/
+
+/* FADE IN UP - Hero entrance animation */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in-up:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.fade-in-up:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* FADE IN UP KEYFRAMES */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ANIMATE TEXT - Scroll-triggered animation */
+.animate-text {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 
+===============================================
+RESPONSIVE DESIGN - Mobile & Tablet
+===============================================
+*/
+
+/* TABLET AND MOBILE - 768px and below */
+@media (max-width: 768px) {
+    /* Show mobile menu toggle */
+    .menu-toggle {
+        display: flex;
+    }
+    
+    /* Mobile navigation menu */
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(15px);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 15px 40px rgba(30, 58, 138, 0.15);
+        border-radius: 0 0 20px 20px;
+    }
+    
+    /* Show menu when active */
+    .nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Stack navigation vertically */
+    .nav ul {
+        flex-direction: column;
+        padding: 30px 25px;
+        gap: 15px;
+    }
+    
+    /* Mobile navigation links */
+    .nav a {
+        display: block;
+        padding: 12px 20px;
+        background: linear-gradient(135deg, #f0f9ff, #ffffff);
+        border: 2px solid rgba(59, 130, 246, 0.1);
+        border-radius: 10px;
+        text-align: center;
+        color: #1e3a8a;
+    }
+    
+    .nav a:hover,
+    .nav a.active {
+        background: linear-gradient(135deg, #3b82f6, #60a5fa);
+        color: white;
+        transform: translateX(5px);
+    }
+    
+    /* Smaller hero title */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    /* Stack hero buttons */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    /* Smaller section titles */
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 50px;
+    }
+    
+    /* Single column contact grid */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    /* Stack slide content vertically */
+    .slide {
+        flex-direction: column;
+    }
+    
+    .slide-image {
+        min-height: 250px;
+    }
+    
+    .slide-content {
+        padding: 30px;
+    }
+    
+    .slide-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Smaller navigation arrows */
+    .slide-nav {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    .slide-nav.prev {
+        left: 15px;
+    }
+    
+    .slide-nav.next {
+        right: 15px;
+    }
+    
+    /* Adjust vision mission grid */
+    .vision-mission-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* SMALL MOBILE - 480px and below */
+@media (max-width: 480px) {
+    /* Smaller hero title */
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    /* Force single columns */
+    .goals-grid,
+    .programs-grid,
+    .faculty-grid,
+    .facilities-grid,
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    /* Smaller logos */
+    .logos {
+        gap: 12px;
+    }
+    
+    .logo {
+        width: 55px;
+        height: 55px;
+    }
+    
+    /* Reduce section padding */
+    .section {
+        padding: 70px 0;
+    }
+    
+    /* Smaller card padding */
+    .vm-card,
+    .goal-card,
+    .program-card,
+    .faculty-card,
+    .facility-card {
+        padding: 30px 25px;
+    }
+    
+    /* Adjust contact grid */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    /* Better mobile form inputs */
+    .contact-form input,
+    .contact-form textarea {
+        padding: 16px;
+        font-size: 16px;
+    }
+    
+    /* Organizational chart adjustments */
+    .org-box {
+        min-width: 200px;
+        padding: 20px;
+    }
+    
+    .org-name {
+        font-size: 1.1rem;
+    }
+}
+
+/* 
+===============================================
+ACCESSIBILITY AND FOCUS STYLES
+===============================================
+*/
+
+/* Enhanced focus for keyboard navigation */
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+    outline: 3px solid #3b82f6;
+    outline-offset: 3px;
+}
+
+.nav a:focus {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(96, 165, 250, 0.15));
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    /* Disable transforms for reduced motion */
+    .nav a:hover,
+    .btn:hover,
+    .photo-card:hover,
+    .vm-card:hover,
+    .goal-card:hover,
+    .program-card:hover,
+    .faculty-card:hover,
+    .facility-card:hover,
+    .org-box:hover {
+        transform: none !important;
+    }
+}
