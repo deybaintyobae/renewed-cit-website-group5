@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Character encoding for text display -->
     <meta charset="UTF-8">
-    <!-- Responsive viewport for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Browser tab title -->
     <title>Announcements - SLSU CIT Department</title>
-    <!-- External stylesheet link -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Fixed navigation header -->
     <header class="header">
         <div class="header-container">
-            <!-- University and department logos -->
             <div class="logos">
                 <img src="image source/slsulogo.png" alt="SLSU Logo" class="logo">
                 <img src="image source/industrial technology.png" alt="CIT Logo" class="logo">
@@ -24,14 +18,12 @@
                 </div>
             </div>
             
-            <!-- Mobile hamburger menu button -->
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             
-            <!-- Main navigation links -->
             <nav class="nav" id="navigation" role="navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -49,77 +41,227 @@
     </header>
 
     <main>
-        <!-- Announcements slideshow section -->
         <section id="announcements" class="announcements-section">
             <div class="container">
                 <h2 class="announcements-title">📣 Warriors Announcement!! 📣</h2>
                 
-                <!-- Slideshow container with multiple slides -->
-                <div class="slideshow-container">
-                    
-                    <!-- First announcement slide -->
-                    <div class="slide active">
-                        <div class="slide-image">
-                            <img src="image source/elab.png" alt="Enrollment Announcement">
+                <div class="slideshow-wrapper">
+                    <div class="slideshow-container">
+                        <div class="slide-progress" id="slideProgress"></div>
+                        
+                        <!-- Slide 1 -->
+                        <div class="slide active">
+                            <div class="slide-image">
+                                <img src="image source/elab.png" alt="Enrollment Announcement">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-badge">New</div>
+                                <h3>Enrollment for 2nd Semester 2025</h3>
+                                <p>Registration is now open for the 2nd semester. Visit the registrar's office or apply online through our student portal. Don't miss this opportunity to secure your spot!</p>
+                                <span class="slide-date">January 15, 2025</span>
+                            </div>
                         </div>
-                        <div class="slide-content">
-                            <div class="slide-badge">New</div>
-                            <h3>Enrollment for 2nd Semester 2025</h3>
-                            <p>Registration is now open for the 2nd semester. Visit the registrar's office or apply online through our student portal.</p>
-                            <span class="slide-date">January 15, 2025</span>
+
+                        <!-- Slide 2 -->
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="image source/lab.png" alt="Competition Winners">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-badge">Achievement</div>
+                                <h3>IT Competition Winners</h3>
+                                <p>Congratulations to our Computer Technology students for winning 1st place in the Regional Programming Contest! Your dedication and hard work have made us proud.</p>
+                                <span class="slide-date">January 10, 2025</span>
+                            </div>
                         </div>
+
+                        <!-- Slide 3 -->
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="image source/slsubg.png" alt="Laboratory Upgrade">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-badge">Upgrade</div>
+                                <h3>New Laboratory Equipment</h3>
+                                <p>Our CPT Lab has been upgraded with state-of-the-art computers and software for enhanced learning experience. Experience cutting-edge technology in your studies!</p>
+                                <span class="slide-date">January 8, 2025</span>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="image source/innovation.png" alt="Workshop Announcement">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-badge">Event</div>
+                                <h3>Tech Innovation Workshop</h3>
+                                <p>Join us for an exciting workshop on emerging technologies and innovation. Learn from industry experts and expand your technical skills. Registration opens next week!</p>
+                                <span class="slide-date">January 5, 2025</span>
+                            </div>
+                        </div>
+
+                        <button class="slide-nav prev" onclick="changeSlide(-1)" aria-label="Previous announcement">‹</button>
+                        <button class="slide-nav next" onclick="changeSlide(1)" aria-label="Next announcement">›</button>
                     </div>
 
-                    <!-- Second announcement slide -->
-                    <div class="slide">
-                        <div class="slide-image">
-                            <img src="image source/lab.png" alt="Competition Winners">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-badge">Achievement</div>
-                            <h3>IT Competition Winners</h3>
-                            <p>Congratulations to our Computer Technology students for winning 1st place in the Regional Programming Contest!</p>
-                            <span class="slide-date">January 10, 2025</span>
-                        </div>
+                    <div class="slide-indicators">
+                        <span class="indicator active" onclick="goToSlide(1)"></span>
+                        <span class="indicator" onclick="goToSlide(2)"></span>
+                        <span class="indicator" onclick="goToSlide(3)"></span>
+                        <span class="indicator" onclick="goToSlide(4)"></span>
                     </div>
-
-                    <!-- Third announcement slide -->
-                    <div class="slide">
-                        <div class="slide-image">
-                            <img src="image source/slsubg.png" alt="Laboratory Upgrade">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-badge">Upgrade</div>
-                            <h3>New Laboratory Equipment</h3>
-                            <p>Our CPT Lab has been upgraded with state-of-the-art computers and software for enhanced learning experience.</p>
-                            <span class="slide-date">January 8, 2025</span>
-                        </div>
-                    </div>
-
-                    <!-- Previous slide button -->
-                    <button class="slide-nav prev" onclick="changeSlide(-1)" aria-label="Previous announcement">←</button>
-                    <!-- Next slide button -->
-                    <button class="slide-nav next" onclick="changeSlide(1)" aria-label="Next announcement">→</button>
-                </div>
-
-                <!-- Slide position indicators -->
-                <div class="slide-indicators">
-                    <span class="indicator active" onclick="currentSlide(1)"></span>
-                    <span class="indicator" onclick="currentSlide(2)"></span>
-                    <span class="indicator" onclick="currentSlide(3)"></span>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Site footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 SLSU Main Campus Lucban, Quezon. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- External JavaScript file -->
     <script src="script.js"></script>
+    <script>
+        // Slideshow Variables
+        let currentSlideIndex = 1;
+        let slideTimer;
+        let progressTimer;
+        const AUTO_SLIDE_INTERVAL = 5000;
+
+        // Initialize slideshow
+        function initializeSlideshow() {
+            showSlide(currentSlideIndex);
+            startAutoSlide();
+            
+            const container = document.querySelector('.slideshow-container');
+            if (container) {
+                container.addEventListener('mouseenter', pauseAutoSlide);
+                container.addEventListener('mouseleave', resumeAutoSlide);
+            }
+        }
+
+        // Show specific slide
+        function showSlide(n) {
+            const slides = document.getElementsByClassName('slide');
+            const indicators = document.getElementsByClassName('indicator');
+            
+            if (slides.length === 0) return;
+            
+            if (n > slides.length) {
+                currentSlideIndex = 1;
+            }
+            if (n < 1) {
+                currentSlideIndex = slides.length;
+            }
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            
+            for (let i = 0; i < indicators.length; i++) {
+                indicators[i].classList.remove('active');
+            }
+            
+            slides[currentSlideIndex - 1].classList.add('active');
+            if (indicators[currentSlideIndex - 1]) {
+                indicators[currentSlideIndex - 1].classList.add('active');
+            }
+
+            resetProgress();
+        }
+
+        // Change slide by offset
+        function changeSlide(offset) {
+            currentSlideIndex += offset;
+            showSlide(currentSlideIndex);
+            restartAutoSlide();
+        }
+
+        // Go to specific slide
+        function goToSlide(n) {
+            currentSlideIndex = n;
+            showSlide(currentSlideIndex);
+            restartAutoSlide();
+        }
+
+        // Progress bar
+        function updateProgress() {
+            const progressBar = document.getElementById('slideProgress');
+            let width = 0;
+            const increment = 100 / (AUTO_SLIDE_INTERVAL / 50);
+            
+            clearInterval(progressTimer);
+            progressTimer = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(progressTimer);
+                } else {
+                    width += increment;
+                    if (progressBar) {
+                        progressBar.style.width = width + '%';
+                    }
+                }
+            }, 50);
+        }
+
+        function resetProgress() {
+            const progressBar = document.getElementById('slideProgress');
+            if (progressBar) {
+                progressBar.style.width = '0%';
+            }
+            clearInterval(progressTimer);
+            updateProgress();
+        }
+
+        // Auto slide functions
+        function startAutoSlide() {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(() => {
+                currentSlideIndex++;
+                showSlide(currentSlideIndex);
+            }, AUTO_SLIDE_INTERVAL);
+            updateProgress();
+        }
+
+        function pauseAutoSlide() {
+            clearInterval(slideTimer);
+            clearInterval(progressTimer);
+        }
+
+        function resumeAutoSlide() {
+            startAutoSlide();
+        }
+
+        function restartAutoSlide() {
+            pauseAutoSlide();
+            startAutoSlide();
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeSlideshow);
+        } else {
+            initializeSlideshow();
+        }
+
+        // Pause on page visibility change
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                pauseAutoSlide();
+            } else {
+                resumeAutoSlide();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            }
+        });
+    </script>
 </body>
 </html>
