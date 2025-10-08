@@ -40,6 +40,12 @@ body {
     padding: 0 20px;
 }
 
+.orgcontainer {
+    max-width: 12000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 /* 
 ===============================================
 HEADER AND NAVIGATION SECTION
@@ -1367,6 +1373,7 @@ ORGANIZATIONAL CHART SECTION
             0%, 100% { opacity: 1; }
             50% { opacity: 0.6; }
         }
+
 /* 
 ===============================================
 FACILITIES SECTION
