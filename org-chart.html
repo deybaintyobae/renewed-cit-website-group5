@@ -10,11 +10,10 @@
     <header class="header">
         <div class="header-container">
             <div class="logos">
-                <img src="image source/slsulogo.png" alt="SLSU Logo" class="logo">
                 <img src="image source/industrial technology.png" alt="CIT Logo" class="logo">
                 <div class="logo-text">
-                    <span class="logo-title">Southern Luzon State University</span>
-                    <span class="logo-subtitle">College of Industrial Technology</span>
+                    <span class="logo-title">College of Industrial Technology</span>
+                    <span class="logo-subtitle">Main Campus SLSU</span>
                 </div>
             </div>
             
@@ -46,69 +45,101 @@
                 <h2 class="section-title animate-text">Organizational Structure</h2>
                 <p class="org-subtitle animate-text">College of Industrial Technology Leadership Hierarchy</p>
                 
-                <div class="org-chart">
-                    
-                    <!-- Level 1: Dean -->
-                    <div class="org-level">
-                        <div class="org-box dean-box">
-                            <div class="org-position">Dean</div>
-                            <div class="org-name">Dr. Maria Santos</div>
-                            <div class="org-dept">College of Industrial Technology</div>
-                        </div>
+                <div class="tree-container">
+                    <div class="tree">
+                        <ul>
+                            <!-- Dean Level -->
+                            <li>
+                                <a href="#">
+                                    <div class="avatar-placeholder dean-avatar">MS</div>
+                                    <span class="position">Dean</span>
+                                    <span class="name">Dr. Maria Santos</span>
+                                    <span class="department">College of Industrial Technology</span>
+                                </a>
+                                
+                                <ul>
+                                    <!-- Department Head 1 -->
+                                    <li>
+                                        <a href="#">
+                                            <div class="avatar-placeholder dept-avatar">JC</div>
+                                            <span class="position">Department Head</span>
+                                            <span class="name">Prof. Juan Cruz</span>
+                                            <span class="department">Computer Technology</span>
+                                        </a>
+                                        
+                                        <ul>
+                                            <!-- Coordinator 1 -->
+                                            <li>
+                                                <a href="#">
+                                                    <div class="avatar-placeholder coord-avatar">AG</div>
+                                                    <span class="position">Lab Coordinator</span>
+                                                    <span class="name">Prof. Ana Garcia</span>
+                                                    <span class="department">CPT & MIS Labs</span>
+                                                </a>
+                                            </li>
+                                            
+                                            <!-- Coordinator 2 -->
+                                            <li>
+                                                <a href="#">
+                                                    <div class="avatar-placeholder coord-avatar">CD</div>
+                                                    <span class="position">Research Coordinator</span>
+                                                    <span class="name">Dr. Carlos Dela Cruz</span>
+                                                    <span class="department">Innovation & Development</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <!-- Department Head 2 -->
+                                    <li>
+                                        <a href="#">
+                                            <div class="avatar-placeholder dept-avatar">PR</div>
+                                            <span class="position">Department Head</span>
+                                            <span class="name">Engr. Pedro Reyes</span>
+                                            <span class="department">Automotive Technology</span>
+                                        </a>
+                                        
+                                        <ul>
+                                            <!-- Coordinator 3 -->
+                                            <li>
+                                                <a href="#">
+                                                    <div class="avatar-placeholder coord-avatar">LT</div>
+                                                    <span class="position">Student Affairs</span>
+                                                    <span class="name">Ms. Linda Torres</span>
+                                                    <span class="department">Student Services</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <!-- Department Head 3 -->
+                                    <li>
+                                        <a href="#">
+                                            <div class="avatar-placeholder dept-avatar">RM</div>
+                                            <span class="position">Department Head</span>
+                                            <span class="name">Engr. Rosa Mendoza</span>
+                                            <span class="department">Electronics Technology</span>
+                                        </a>
+                                        
+                                        <ul>
+                                            <!-- Coordinator 4 -->
+                                            <li>
+                                                <a href="#">
+                                                    <div class="avatar-placeholder coord-avatar">RS</div>
+                                                    <span class="position">Extension Coordinator</span>
+                                                    <span class="name">Prof. Ramon Silva</span>
+                                                    <span class="department">Community Outreach</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                     
-                    <!-- Connector -->
-                    <div class="org-connector"></div>
-                    
-                    <!-- Level 2: Department Heads -->
-                    <div class="org-level dept-heads">
-                        <div class="org-box dept-box">
-                            <div class="org-position">Department Head</div>
-                            <div class="org-name">Prof. Juan Cruz</div>
-                            <div class="org-dept">Computer Technology</div>
-                        </div>
-                        
-                        <div class="org-box dept-box">
-                            <div class="org-position">Department Head</div>
-                            <div class="org-name">Engr. Pedro Reyes</div>
-                            <div class="org-dept">Automotive Technology</div>
-                        </div>
-                        
-                        <div class="org-box dept-box">
-                            <div class="org-position">Department Head</div>
-                            <div class="org-name">Engr. Rosa Mendoza</div>
-                            <div class="org-dept">Electronics Technology</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Connector -->
-                    <div class="org-connector"></div>
-                    
-                    <!-- Level 3: Coordinators -->
-                    <div class="org-level coordinators">
-                        <div class="org-box coord-box">
-                            <div class="org-position">Lab Coordinator</div>
-                            <div class="org-name">Prof. Ana Garcia</div>
-                            <div class="org-dept">CPT & MIS Labs</div>
-                        </div>
-                        
-                        <div class="org-box coord-box">
-                            <div class="org-position">Research Coordinator</div>
-                            <div class="org-name">Dr. Carlos Dela Cruz</div>
-                            <div class="org-dept">Innovation & Development</div>
-                        </div>
-                        
-                        <div class="org-box coord-box">
-                            <div class="org-position">Student Affairs</div>
-                            <div class="org-name">Ms. Linda Torres</div>
-                            <div class="org-dept">Student Services</div>
-                        </div>
-                        
-                        <div class="org-box coord-box">
-                            <div class="org-position">Extension Coordinator</div>
-                            <div class="org-name">Prof. Ramon Silva</div>
-                            <div class="org-dept">Community Outreach</div>
-                        </div>
+                    <div class="scroll-indicator">
+                        ← Scroll horizontally to view full chart →
                     </div>
                 </div>
             </div>
