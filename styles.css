@@ -1000,7 +1000,26 @@ FACULTY SECTION
 
 /* 
 ===============================================
-ORGANIZATIONAL CHART SECTION - UPDATED
+CONTAINER FIXES
+===============================================
+*/
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.orgcontainer {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+===============================================
+ORGANIZATIONAL CHART SECTION - FIXED SCROLLING
 ===============================================
 */
 
@@ -1008,6 +1027,7 @@ ORGANIZATIONAL CHART SECTION - UPDATED
     padding: 100px 0;
     background: linear-gradient(135deg, #f0f9ff, #ffffff);
     font-family: 'Poppins', 'Segoe UI', sans-serif;
+    overflow-x: hidden;
 }
 
 .org-subtitle {
@@ -1018,27 +1038,31 @@ ORGANIZATIONAL CHART SECTION - UPDATED
     font-weight: 500;
 }
 
-/* Tree Structure - FIXED SCROLLING */
+/* Tree Structure - COMPLETELY FIXED SCROLLING */
 .tree-container {
     width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: none;
+    margin: 0;
+    padding: 40px 20px;
     overflow-x: auto;
     overflow-y: visible;
     /* Better scrollbar styling */
     scrollbar-width: thin;
     scrollbar-color: #3b82f6 #e0f2fe;
+    position: relative;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Custom scrollbar for webkit browsers */
 .tree-container::-webkit-scrollbar {
-    height: 12px;
+    height: 14px;
 }
 
 .tree-container::-webkit-scrollbar-track {
     background: #e0f2fe;
     border-radius: 10px;
+    margin: 0 20px;
 }
 
 .tree-container::-webkit-scrollbar-thumb {
@@ -1052,11 +1076,12 @@ ORGANIZATIONAL CHART SECTION - UPDATED
 }
 
 .tree {
-    width: 100%;
+    width: fit-content;
+    min-width: 3200px;
     text-align: center;
     position: relative;
-    min-width: 2400px;
     padding-bottom: 40px;
+    margin: 0 auto;
 }
 
 .tree ul {
@@ -1158,7 +1183,7 @@ ORGANIZATIONAL CHART SECTION - UPDATED
     transform: translateX(0);
 }
 
-/* Avatar Placeholders - UPDATED FOR IMAGES */
+/* Avatar Placeholders - SUPPORTS IMAGES */
 .avatar-placeholder {
     width: 55px;
     height: 55px;
@@ -1183,6 +1208,9 @@ ORGANIZATIONAL CHART SECTION - UPDATED
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* Hide initials when image is present */
@@ -1418,7 +1446,7 @@ ORGANIZATIONAL CHART SECTION - UPDATED
 /* Responsive Design */
 @media (max-width: 768px) {
     .tree {
-        min-width: 2800px;
+        min-width: 3500px;
     }
 
     .scroll-indicator {
@@ -1426,7 +1454,7 @@ ORGANIZATIONAL CHART SECTION - UPDATED
     }
     
     .tree-container {
-        padding: 20px 10px;
+        padding: 40px 10px;
     }
 }
 
@@ -1447,70 +1475,6 @@ ORGANIZATIONAL CHART SECTION - UPDATED
     0%, 100% { opacity: 1; }
     50% { opacity: 0.6; }
 }
-
-/* 
-===============================================
-FACILITIES SECTION
-===============================================
-*/
-
-/* FACILITIES GRID - Facilities layout */
-.facilities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 80px;
-}
-
-/* FACILITY CARD - Individual facility */
-.facility-card {
-    padding: 40px;
-    background: linear-gradient(135deg, #ffffff, #f0f9ff);
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid rgba(59, 130, 246, 0.08);
-    position: relative;
-    overflow: hidden;
-}
-
-/* FACILITY ICON - Decorative icon */
-.facility-icon {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.facility-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
-}
-
-.facility-card:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 25px 60px rgba(59, 130, 246, 0.15);
-    border-color: rgba(59, 130, 246, 0.15);
-}
-
-.facility-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 18px;
-    color: #1e3a8a;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-}
-
-.facility-card p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #64748b;
-}
-
 /* 
 ===============================================
 PHOTO GALLERY SECTION
