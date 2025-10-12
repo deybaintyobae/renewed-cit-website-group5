@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Character encoding for text display -->
     <meta charset="UTF-8">
-    <!-- Responsive viewport for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Browser tab title -->
     <title>Programs - SLSU CIT Department</title>
-    <!-- External stylesheet link -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Fixed navigation header -->
     <header class="header">
         <div class="header-container">
             <div class="logos">
@@ -22,19 +17,17 @@
                 </div>
             </div>
             
-            <!-- Mobile hamburger menu button -->
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             
-            <!-- Main navigation links -->
             <nav class="nav" id="navigation" role="navigation">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="announcements.html">Announcements</a></li>
-                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="programs.html" class="active">Programs</a></li>
                     <li><a href="faculty.html">Faculty</a></li>
                     <li><a href="org-chart.html">Organization</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
@@ -44,31 +37,208 @@
     </header>
 
     <main style="padding-top: 80px;">
-        <!-- Academic programs section -->
-        <section id="programs" class="section">
+        <section id="programs" class="programs-showcase">
             <div class="container">
                 <h2 class="section-title animate-text">Academic Programs</h2>
+                <p class="programs-subtitle animate-text">Choose from our diverse range of technology-focused programs designed to prepare you for tomorrow's challenges</p>
                 
-                <!-- Programs cards grid -->
-                <div class="programs-grid">
-                    <!-- Main program card -->
-                    <div class="program-card animate-text">
-                        <div class="program-icon">🎓</div>
+                <!-- Featured Program -->
+                <div class="featured-program animate-text">
+                    <div class="featured-content">
+                        <div class="featured-badge">🌟 Featured Program</div>
                         <h3>Bachelor of Science in Industrial Technology</h3>
-                        <p>Comprehensive undergraduate program covering fundamental industry concepts and practical applications.</p>
-                        
-                        <!-- Specializations list -->
-                        <ul class="specializations-list">
-                            <li>BindTech Computer Technology</li>
-                            <li>BindTech Automotive Technology</li>
-                            <li>BindTech Electrical Technology</li>
-                            <li>BindTech Electronics Technology</li>
-                            <li>BindTech Food Technology</li>
-                            <li>BindTech Industrial Design Technology</li>
-                            <li>BindTech Mechanical Technology</li>
-                            <li>BindTech Fashion and Apparel Technology</li>
-                            <li>Bachelor of Science in Information Technology</li>
-                        </ul>
+                        <p>A comprehensive undergraduate program that combines theoretical knowledge with hands-on practical experience across multiple technology disciplines. Our curriculum is designed to develop industry-ready professionals equipped with cutting-edge skills and innovative mindset.</p>
+                        <div class="featured-stats">
+                            <div class="featured-stat">
+                                <div class="stat-value">4 Years</div>
+                                <div class="stat-label">Program Duration</div>
+                            </div>
+                            <div class="featured-stat">
+                                <div class="stat-value">8+</div>
+                                <div class="stat-label">Specializations</div>
+                            </div>
+                            <div class="featured-stat">
+                                <div class="stat-value">95%</div>
+                                <div class="stat-label">Job Placement</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featured-image">
+                        <img src="image source/lab.png" alt="Industrial Technology Program">
+                    </div>
+                </div>
+
+                <!-- Specializations Grid -->
+                <div class="specializations-grid">
+                    <!-- Computer Technology -->
+                    <div class="specialization-card animate-text">
+                        <div class="spec-image-wrapper">
+                            <img src="image source/lab.png" alt="Computer Technology">
+                            <div class="spec-overlay"></div>
+                        </div>
+                        <div class="spec-content">
+                            <div class="spec-icon">💻</div>
+                            <h4>Computer Technology</h4>
+                            <p>Master hardware, software, networking, and system administration through hands-on training.</p>
+                            <ul class="spec-highlights">
+                                <li>✓ Network Administration</li>
+                                <li>✓ Hardware & Software</li>
+                                <li>✓ System Troubleshooting</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Automotive Technology -->
+                    <div class="specialization-card animate-text">
+                        <div class="spec-image-wrapper">
+                            <img src="image source/AUTOMOTIVE_LAB.png" alt="Automotive Technology">
+                            <div class="spec-overlay"></div>
+                        </div>
+                        <div class="spec-content">
+                            <div class="spec-icon">🚗</div>
+                            <h4>Automotive Technology</h4>
+                            <p>Learn vehicle systems, diagnostics, repair, and maintenance with modern equipment.</p>
+                            <ul class="spec-highlights">
+                                <li>✓ Engine Systems</li>
+                                <li>✓ Vehicle Diagnostics</li>
+                                <li>✓ Auto Maintenance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Electrical Technology -->
+                    <div class="specialization-card animate-text">
+                        <div class="spec-image-wrapper">
+                            <img src="image source/ELECTRICAL_LAB3.png" alt="Electrical Technology">
+                            <div class="spec-overlay"></div>
+                        </div>
+                        <div class="spec-content">
+                            <div class="spec-icon">⚡</div>
+                            <h4>Electrical Technology</h4>
+                            <p>Study electrical systems, power distribution, and circuit design fundamentals.</p>
+                            <ul class="spec-highlights">
+                                <li>✓ Power Systems</li>
+                                <li>✓ Circuit Design</li>
+                                <li>✓ Electrical Safety</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Electronics Technology -->
+                    <div class="specialization-card animate-text">
+                        <div class="spec-image-wrapper">
+                            <img src="image source/mechatronics.png" alt="Electronics Technology">
+                            <div class="spec-overlay"></div>
+                        </div>
+                        <div class="spec-content">
+                            <div class="spec-icon">🔌</div>
+                            <h4>Electronics Technology</h4>
+                            <p>Explore digital and analog electronics, microcontrollers, and embedded systems.</p>
+                            <ul class="spec-highlights">
+                                <li>✓ Digital Electronics</li>
+                                <li>✓ Microcontrollers</li>
+                                <li>✓ Embedded Systems</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Food Technology -->
+                    <div class="specialization-card animate-text">
+                        <div class="spec-image-wrapper">
+                            <img src="image source/innovation.png" alt="Food Technology">
+                            <div class="spec-overlay"></div>
+                        </div>
+                        <div class="spec-content">
+                            <div class="spec-icon">🍽️</div>
+                            <h4>Food Technology</h4>
+                            <p>Combine culinary arts with food science, safety, and production management.</p>
+                            <ul class="spec-highlights">
+                                <li>✓ Food Processing</li>
+                                <li>✓ Quality Control</li>
+                                <li>✓ Food Safety</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Mechanical Technology -->
+                    <div class="specialization-card animate-text">
+                        <div class="spec-image-wrapper">
+                            <img src="image source/MECHANICAL_LAB11.png" alt="Mechanical Technology">
+                            <div class="spec-overlay"></div>
+                        </div>
+                        <div class="spec-content">
+                            <div class="spec-icon">⚙️</div>
+                            <h4>Mechanical Technology</h4>
+                            <p>Focus on machinery, manufacturing processes, and mechanical system design.</p>
+                            <ul class="spec-highlights">
+                                <li>✓ CNC Machining</li>
+                                <li>✓ Manufacturing</li>
+                                <li>✓ CAD Design</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Fashion and Apparel -->
+                    <div class="specialization-card animate-text">
+                        <div class="spec-image-wrapper">
+                            <img src="image source/elab.png" alt="Fashion Technology">
+                            <div class="spec-overlay"></div>
+                        </div>
+                        <div class="spec-content">
+                            <div class="spec-icon">👔</div>
+                            <h4>Fashion & Apparel</h4>
+                            <p>Develop skills in garment construction, pattern making, and fashion design.</p>
+                            <ul class="spec-highlights">
+                                <li>✓ Pattern Design</li>
+                                <li>✓ Garment Construction</li>
+                                <li>✓ Fashion Trends</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Print Media Technology -->
+                    <div class="specialization-card animate-text">
+                        <div class="spec-image-wrapper">
+                            <img src="image source/SPEECHLAB_1.png" alt="Print Media">
+                            <div class="spec-overlay"></div>
+                        </div>
+                        <div class="spec-content">
+                            <div class="spec-icon">🖨️</div>
+                            <h4>Print Media Technology</h4>
+                            <p>Master graphic design, printing processes, and digital media production.</p>
+                            <ul class="spec-highlights">
+                                <li>✓ Graphic Design</li>
+                                <li>✓ Print Production</li>
+                                <li>✓ Digital Media</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Information Technology Program -->
+                <div class="it-program animate-text">
+                    <div class="it-content">
+                        <div class="it-badge">⭐ Flagship Program</div>
+                        <h3>Bachelor of Science in Information Technology</h3>
+                        <p>Dive deep into software development, database management, web technologies, and IT infrastructure. Our BSIT program prepares you for the fast-paced world of information technology with industry-relevant curriculum and real-world projects.</p>
+                        <div class="it-features">
+                            <div class="it-feature">
+                                <span class="feature-icon">🎯</span>
+                                <span>Industry Partnerships</span>
+                            </div>
+                            <div class="it-feature">
+                                <span class="feature-icon">💼</span>
+                                <span>Internship Opportunities</span>
+                            </div>
+                            <div class="it-feature">
+                                <span class="feature-icon">🏅</span>
+                                <span>Professional Certifications</span>
+                            </div>
+                            <div class="it-feature">
+                                <span class="feature-icon">🌐</span>
+                                <span>Global Standards</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,41 +246,33 @@
     </main>
 
     <main style="padding-top: 80px;">
-        <!-- Contact information and form section -->
         <section id="contact" class="section">
             <div class="container">
                 <h2 class="section-title animate-text">Contact Us</h2>
                 
-                <!-- Contact information and form grid -->
                 <div class="contact-grid">
-                    <!-- Contact information column -->
                     <div class="contact-info animate-text">
                         <h3>Get in Touch</h3>
                         
-                        <!-- Physical address -->
                         <div class="contact-item">
                             <strong>Address:</strong>
                             <p>SLSU Main Campus, CIT Building<br>Lucban, Quezon</p>
                         </div>
                         
-                        <!-- Phone number -->
                         <div class="contact-item">
                             <strong>Phone:</strong>
                             <p>(63+) 949 445 9745</p>
                         </div>
                         
-                        <!-- Email address -->
                         <div class="contact-item">
                             <strong>Email:</strong>
                             <p>rdaveandrew@slsu.edu.ph</p>
                         </div>
                     </div>
                     
-                    <!-- Contact message form -->
                     <div class="contact-form animate-text">
                         <h3>Send us a message</h3>
                         
-                        <!-- Form with client-side validation -->
                         <form id="contactForm" novalidate>
                             <input type="text" placeholder="Your Name" required aria-label="Your full name">
                             <input type="email" placeholder="Your Email" required aria-label="Your email address">
@@ -123,14 +285,12 @@
         </section>
     </main>
 
-    <!-- Site footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 SLSU Main Campus Lucban, Quezon. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- External JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
