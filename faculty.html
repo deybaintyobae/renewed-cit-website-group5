@@ -32,15 +32,12 @@
             <!-- Main navigation links -->
             <nav class="nav" id="navigation" role="navigation">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="announcements.html">Announcements</a></li>
-                    <li><a href="about.html">About</a></li>
                     <li><a href="programs.html">Programs</a></li>
-                    <li><a href="faculty.html" class="active">Faculty</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
                     <li><a href="org-chart.html">Organization</a></li>
-                    <li><a href="facilities.html">Facilities</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -116,6 +113,54 @@
                         <h3>Ljem S. Villarosa</h3>
                         <p class="title">1st Year Computer Technology Student</p>
                         <p>kind of person who finds peace in motion</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <main style="padding-top: 80px;">
+        <!-- Contact information and form section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title animate-text">Contact Us</h2>
+                
+                <!-- Contact information and form grid -->
+                <div class="contact-grid">
+                    <!-- Contact information column -->
+                    <div class="contact-info animate-text">
+                        <h3>Get in Touch</h3>
+                        
+                        <!-- Physical address -->
+                        <div class="contact-item">
+                            <strong>Address:</strong>
+                            <p>SLSU Main Campus, CIT Building<br>Lucban, Quezon</p>
+                        </div>
+                        
+                        <!-- Phone number -->
+                        <div class="contact-item">
+                            <strong>Phone:</strong>
+                            <p>(63+) 949 445 9745</p>
+                        </div>
+                        
+                        <!-- Email address -->
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <p>rdaveandrew@slsu.edu.ph</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact message form -->
+                    <div class="contact-form animate-text">
+                        <h3>Send us a message</h3>
+                        
+                        <!-- Form with client-side validation -->
+                        <form id="contactForm" novalidate>
+                            <input type="text" placeholder="Your Name" required aria-label="Your full name">
+                            <input type="email" placeholder="Your Email" required aria-label="Your email address">
+                            <textarea placeholder="Your Message" rows="5" required aria-label="Your message"></textarea>
+                            <button type="submit" class="btn primary">Send Message</button>
+                        </form>
                     </div>
                 </div>
             </div>

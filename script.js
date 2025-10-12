@@ -1041,6 +1041,145 @@ function initSlideshow() {
     }
 }
 
+// Slideshow Variables
+        let currentSlideIndex = 1;
+        let slideTimer;
+        let progressTimer;
+        const AUTO_SLIDE_INTERVAL = 5000;
+
+        // Initialize slideshow
+        function initializeSlideshow() {
+            showSlide(currentSlideIndex);
+            startAutoSlide();
+            
+            const container = document.querySelector('.slideshow-container');
+            if (container) {
+                container.addEventListener('mouseenter', pauseAutoSlide);
+                container.addEventListener('mouseleave', resumeAutoSlide);
+            }
+        }
+
+        // Show specific slide
+        function showSlide(n) {
+            const slides = document.getElementsByClassName('slide');
+            const indicators = document.getElementsByClassName('indicator');
+            
+            if (slides.length === 0) return;
+            
+            if (n > slides.length) {
+                currentSlideIndex = 1;
+            }
+            if (n < 1) {
+                currentSlideIndex = slides.length;
+            }
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            
+            for (let i = 0; i < indicators.length; i++) {
+                indicators[i].classList.remove('active');
+            }
+            
+            slides[currentSlideIndex - 1].classList.add('active');
+            if (indicators[currentSlideIndex - 1]) {
+                indicators[currentSlideIndex - 1].classList.add('active');
+            }
+
+            resetProgress();
+        }
+
+        // Change slide by offset
+        function changeSlide(offset) {
+            currentSlideIndex += offset;
+            showSlide(currentSlideIndex);
+            restartAutoSlide();
+        }
+
+        // Go to specific slide
+        function goToSlide(n) {
+            currentSlideIndex = n;
+            showSlide(currentSlideIndex);
+            restartAutoSlide();
+        }
+
+        // Progress bar
+        function updateProgress() {
+            const progressBar = document.getElementById('slideProgress');
+            let width = 0;
+            const increment = 100 / (AUTO_SLIDE_INTERVAL / 50);
+            
+            clearInterval(progressTimer);
+            progressTimer = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(progressTimer);
+                } else {
+                    width += increment;
+                    if (progressBar) {
+                        progressBar.style.width = width + '%';
+                    }
+                }
+            }, 50);
+        }
+
+        function resetProgress() {
+            const progressBar = document.getElementById('slideProgress');
+            if (progressBar) {
+                progressBar.style.width = '0%';
+            }
+            clearInterval(progressTimer);
+            updateProgress();
+        }
+
+        // Auto slide functions
+        function startAutoSlide() {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(() => {
+                currentSlideIndex++;
+                showSlide(currentSlideIndex);
+            }, AUTO_SLIDE_INTERVAL);
+            updateProgress();
+        }
+
+        function pauseAutoSlide() {
+            clearInterval(slideTimer);
+            clearInterval(progressTimer);
+        }
+
+        function resumeAutoSlide() {
+            startAutoSlide();
+        }
+
+        function restartAutoSlide() {
+            pauseAutoSlide();
+            startAutoSlide();
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeSlideshow);
+        } else {
+            initializeSlideshow();
+        }
+
+        // Pause on page visibility change
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                pauseAutoSlide();
+            } else {
+                resumeAutoSlide();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            }
+        });
+
 /* 
 ===============================================
 CONTACT FORM HANDLING

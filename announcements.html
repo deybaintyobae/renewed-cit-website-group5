@@ -25,15 +25,12 @@
             
             <nav class="nav" id="navigation" role="navigation">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="announcements.html" class="active">Announcements</a></li>
-                    <li><a href="about.html">About</a></li>
+                   <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="announcements.html">Announcements</a></li>
                     <li><a href="programs.html">Programs</a></li>
                     <li><a href="faculty.html">Faculty</a></li>
                     <li><a href="org-chart.html">Organization</a></li>
-                    <li><a href="facilities.html">Facilities</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -115,152 +112,61 @@
         </section>
     </main>
 
+    <main style="padding-top: 80px;">
+        <!-- Contact information and form section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title animate-text">Contact Us</h2>
+                
+                <!-- Contact information and form grid -->
+                <div class="contact-grid">
+                    <!-- Contact information column -->
+                    <div class="contact-info animate-text">
+                        <h3>Get in Touch</h3>
+                        
+                        <!-- Physical address -->
+                        <div class="contact-item">
+                            <strong>Address:</strong>
+                            <p>SLSU Main Campus, CIT Building<br>Lucban, Quezon</p>
+                        </div>
+                        
+                        <!-- Phone number -->
+                        <div class="contact-item">
+                            <strong>Phone:</strong>
+                            <p>(63+) 949 445 9745</p>
+                        </div>
+                        
+                        <!-- Email address -->
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <p>rdaveandrew@slsu.edu.ph</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact message form -->
+                    <div class="contact-form animate-text">
+                        <h3>Send us a message</h3>
+                        
+                        <!-- Form with client-side validation -->
+                        <form id="contactForm" novalidate>
+                            <input type="text" placeholder="Your Name" required aria-label="Your full name">
+                            <input type="email" placeholder="Your Email" required aria-label="Your email address">
+                            <textarea placeholder="Your Message" rows="5" required aria-label="Your message"></textarea>
+                            <button type="submit" class="btn primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 SLSU Main Campus Lucban, Quezon. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- External JavaScript file -->
     <script src="script.js"></script>
-    <script>
-        // Slideshow Variables
-        let currentSlideIndex = 1;
-        let slideTimer;
-        let progressTimer;
-        const AUTO_SLIDE_INTERVAL = 5000;
-
-        // Initialize slideshow
-        function initializeSlideshow() {
-            showSlide(currentSlideIndex);
-            startAutoSlide();
-            
-            const container = document.querySelector('.slideshow-container');
-            if (container) {
-                container.addEventListener('mouseenter', pauseAutoSlide);
-                container.addEventListener('mouseleave', resumeAutoSlide);
-            }
-        }
-
-        // Show specific slide
-        function showSlide(n) {
-            const slides = document.getElementsByClassName('slide');
-            const indicators = document.getElementsByClassName('indicator');
-            
-            if (slides.length === 0) return;
-            
-            if (n > slides.length) {
-                currentSlideIndex = 1;
-            }
-            if (n < 1) {
-                currentSlideIndex = slides.length;
-            }
-            
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove('active');
-            }
-            
-            for (let i = 0; i < indicators.length; i++) {
-                indicators[i].classList.remove('active');
-            }
-            
-            slides[currentSlideIndex - 1].classList.add('active');
-            if (indicators[currentSlideIndex - 1]) {
-                indicators[currentSlideIndex - 1].classList.add('active');
-            }
-
-            resetProgress();
-        }
-
-        // Change slide by offset
-        function changeSlide(offset) {
-            currentSlideIndex += offset;
-            showSlide(currentSlideIndex);
-            restartAutoSlide();
-        }
-
-        // Go to specific slide
-        function goToSlide(n) {
-            currentSlideIndex = n;
-            showSlide(currentSlideIndex);
-            restartAutoSlide();
-        }
-
-        // Progress bar
-        function updateProgress() {
-            const progressBar = document.getElementById('slideProgress');
-            let width = 0;
-            const increment = 100 / (AUTO_SLIDE_INTERVAL / 50);
-            
-            clearInterval(progressTimer);
-            progressTimer = setInterval(() => {
-                if (width >= 100) {
-                    clearInterval(progressTimer);
-                } else {
-                    width += increment;
-                    if (progressBar) {
-                        progressBar.style.width = width + '%';
-                    }
-                }
-            }, 50);
-        }
-
-        function resetProgress() {
-            const progressBar = document.getElementById('slideProgress');
-            if (progressBar) {
-                progressBar.style.width = '0%';
-            }
-            clearInterval(progressTimer);
-            updateProgress();
-        }
-
-        // Auto slide functions
-        function startAutoSlide() {
-            clearInterval(slideTimer);
-            slideTimer = setInterval(() => {
-                currentSlideIndex++;
-                showSlide(currentSlideIndex);
-            }, AUTO_SLIDE_INTERVAL);
-            updateProgress();
-        }
-
-        function pauseAutoSlide() {
-            clearInterval(slideTimer);
-            clearInterval(progressTimer);
-        }
-
-        function resumeAutoSlide() {
-            startAutoSlide();
-        }
-
-        function restartAutoSlide() {
-            pauseAutoSlide();
-            startAutoSlide();
-        }
-
-        // Initialize when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initializeSlideshow);
-        } else {
-            initializeSlideshow();
-        }
-
-        // Pause on page visibility change
-        document.addEventListener('visibilitychange', function() {
-            if (document.hidden) {
-                pauseAutoSlide();
-            } else {
-                resumeAutoSlide();
-            }
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowLeft') {
-                changeSlide(-1);
-            } else if (e.key === 'ArrowRight') {
-                changeSlide(1);
-            }
-        });
-    </script>
 </body>
 </html>
