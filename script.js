@@ -1653,7 +1653,7 @@ window.addEventListener('unhandledrejection', function(e) {
 })();
 
 // Alternative: jQuery version (if you're using jQuery)
-/*
+
 (function($) {
   'use strict';
 
@@ -1685,4 +1685,3 @@ window.addEventListener('unhandledrejection', function(e) {
   });
 
 })(jQuery);
-*/
