@@ -1506,92 +1506,92 @@ window.addEventListener('unhandledrejection', function(e) {
 
 // Newsletter Section JavaScript
 (function() {
-  'use strict';
+'use strict';
 
   // Wait for DOM to be ready
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     initNewsletterSection();
-  });
+});
 
-  function initNewsletterSection() {
+function initNewsletterSection() {
     const newsletterItems = document.querySelectorAll('.newsletter-item');
     
     // Add hover effects
     newsletterItems.forEach(item => {
-      item.addEventListener('mouseenter', handleNewsletterHover);
-      item.addEventListener('mouseleave', handleNewsletterLeave);
+        item.addEventListener('mouseenter', handleNewsletterHover);
+        item.addEventListener('mouseleave', handleNewsletterLeave);
     });
 
     // Add click tracking for analytics (optional)
     newsletterItems.forEach(item => {
-      const link = item.querySelector('a');
-      if (link) {
+        const link = item.querySelector('a');
+        if (link) {
         link.addEventListener('click', function(e) {
-          trackNewsletterClick(this.href);
+            trackNewsletterClick(this.href);
         });
-      }
+    }
     });
 
     // Lazy load images if needed
     lazyLoadNewsletterImages();
-  }
+}
 
-  function handleNewsletterHover(e) {
+function handleNewsletterHover(e) {
     const card = e.currentTarget;
     card.style.zIndex = '10';
     
     // Add animation class
     card.classList.add('newsletter-hover');
-  }
+}
 
-  function handleNewsletterLeave(e) {
+function handleNewsletterLeave(e) {
     const card = e.currentTarget;
     card.style.zIndex = '1';
     
     // Remove animation class
     card.classList.remove('newsletter-hover');
-  }
+}
 
-  function trackNewsletterClick(url) {
+function trackNewsletterClick(url) {
     // Analytics tracking (example using console.log)
     console.log('Newsletter clicked:', url);
     
     // If you're using Google Analytics:
     if (typeof gtag !== 'undefined') {
-      gtag('event', 'newsletter_click', {
+        gtag('event', 'newsletter_click', {
         'event_category': 'Newsletter',
         'event_label': url,
         'value': 1
-      });
+    });
     }
-  }
+}
 
-  function lazyLoadNewsletterImages() {
+function lazyLoadNewsletterImages() {
     if ('IntersectionObserver' in window) {
-      const imageObserver = new IntersectionObserver((entries, observer) => {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
+            if (entry.isIntersecting) {
             const img = entry.target;
             const src = img.getAttribute('data-src');
             
             if (src) {
-              img.src = src;
-              img.removeAttribute('data-src');
-              img.classList.add('loaded');
+                img.src = src;
+                img.removeAttribute('data-src');
+                img.classList.add('loaded');
             }
             
             observer.unobserve(img);
-          }
+            }
         });
-      });
+    });
 
-      const lazyImages = document.querySelectorAll('.newsletter-image img[data-src]');
-      lazyImages.forEach(img => imageObserver.observe(img));
+        const lazyImages = document.querySelectorAll('.newsletter-image img[data-src]');
+        lazyImages.forEach(img => imageObserver.observe(img));
     }
-  }
+}
 
   // Optional: Auto-rotate newsletter carousel
-  function initNewsletterCarousel() {
+function initNewsletterCarousel() {
     const grid = document.querySelector('.newsletter-grid');
     if (!grid) return;
 
@@ -1600,88 +1600,88 @@ window.addEventListener('unhandledrejection', function(e) {
     const itemsToShow = getItemsToShow();
     
     function getItemsToShow() {
-      const width = window.innerWidth;
-      if (width < 768) return 1;
-      if (width < 1024) return 2;
-      return 3;
+        const width = window.innerWidth;
+        if (width < 768) return 1;
+        if (width < 1024) return 2;
+        return 3;
     }
 
     function rotateCarousel() {
-      currentIndex = (currentIndex + 1) % items.length;
-      
+        currentIndex = (currentIndex + 1) % items.length;
+        
       // Reorder items
-      const firstItem = items.shift();
-      items.push(firstItem);
-      
+        const firstItem = items.shift();
+        items.push(firstItem);
+    
       // Rebuild grid
-      grid.innerHTML = '';
-      items.forEach(item => grid.appendChild(item));
+        grid.innerHTML = '';
+        items.forEach(item => grid.appendChild(item));
     }
 
     // Auto-rotate every 5 seconds (optional)
     // Uncomment the line below to enable auto-rotation
     // setInterval(rotateCarousel, 5000);
-  }
+}
 
   // Responsive handling
-  let resizeTimer;
-  window.addEventListener('resize', function() {
+let resizeTimer;
+window.addEventListener('resize', function() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
       // Handle responsive changes if needed
-      console.log('Window resized');
+        console.log('Window resized');
     }, 250);
-  });
+});
 
   // Add smooth scroll to view more button (optional)
-  const viewMoreBtn = document.querySelector('.view-more-btn');
-  if (viewMoreBtn && viewMoreBtn.getAttribute('href').startsWith('#')) {
+const viewMoreBtn = document.querySelector('.view-more-btn');
+if (viewMoreBtn && viewMoreBtn.getAttribute('href').startsWith('#')) {
     viewMoreBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
-      
-      if (targetElement) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+    
+        if (targetElement) {
         targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+            behavior: 'smooth',
+            block: 'start'
         });
-      }
+        }
     });
-  }
+}
 
 })();
 
 // Alternative: jQuery version (if you're using jQuery)
 
 (function($) {
-  'use strict';
+'use strict';
 
-  $(document).ready(function() {
+$(document).ready(function() {
     // Newsletter hover effects
     $('.newsletter-item').hover(
-      function() {
+        function() {
         $(this).css('z-index', '10');
-      },
-      function() {
+        },
+        function() {
         $(this).css('z-index', '1');
-      }
+        }
     );
 
     // Track newsletter clicks
     $('.newsletter-item a').on('click', function() {
-      var url = $(this).attr('href');
-      console.log('Newsletter clicked:', url);
-      
+        var url = $(this).attr('href');
+        console.log('Newsletter clicked:', url);
+    
       // Google Analytics tracking
-      if (typeof gtag !== 'undefined') {
+        if (typeof gtag !== 'undefined') {
         gtag('event', 'newsletter_click', {
-          'event_category': 'Newsletter',
-          'event_label': url,
-          'value': 1
+            'event_category': 'Newsletter',
+            'event_label': url,
+            'value': 1
         });
-      }
+    }
     });
-  });
+});
 
 })(jQuery);
