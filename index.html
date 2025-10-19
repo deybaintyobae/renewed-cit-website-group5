@@ -1,37 +1,60 @@
 <!DOCTYPE html>
+<!-- 
+================================================================================
+! SLSU COLLEGE OF INDUSTRIAL TECHNOLOGY - HOME PAGE
+================================================================================
+* Purpose: Main landing page for the CIT department website
+* Features: Hero banner, Vision/Mission, Goals, Contact form
+* Author: SLSU CIT Development Team
+* Last Updated: 2025
+================================================================================
+-->
 <html lang="en">
 <head>
-    <!-- Character encoding for text display -->
+    <!-- * Character encoding for proper text display -->
     <meta charset="UTF-8">
-    <!-- Responsive viewport for mobile devices -->
+    
+    <!-- * Viewport settings for responsive design on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Browser tab title -->
+    
+    <!-- * Browser tab title -->
     <title>Home - SLSU CIT Department</title>
-    <!-- External stylesheet link -->
+    
+    <!-- * Link to external CSS stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Fixed navigation header -->
-<header class="header">
+    <!-- ========================================================================
+        ! HEADER - Fixed navigation bar at top of page
+        ======================================================================== -->
+    <header class="header">
         <div class="header-container">
+            <!-- * Logo and branding section -->
             <div class="logos">
+                <!-- * University logo image -->
                 <img src="image source/industrial technology.png" alt="CIT Logo" class="logo">
+                
+                <!-- * Text beside logo -->
                 <div class="logo-text">
+                    <!-- * Main department title -->
                     <span class="logo-title">College of Industrial Technology</span>
+                    <!-- * Campus location subtitle -->
                     <span class="logo-subtitle">SLSU Main Campus</span>
                 </div>
             </div>
             
-            <!-- Mobile hamburger menu button -->
+            <!-- * Mobile hamburger menu button (hidden on desktop) -->
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <!-- * Three lines that form hamburger icon -->
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             
-            <!-- Main navigation links -->
+            <!-- * Main navigation menu -->
             <nav class="nav" id="navigation" role="navigation">
                 <ul>
+                    <!-- * Navigation links (active class highlights current page) -->
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="announcements.html">Announcements</a></li>
                     <li><a href="programs.html">Programs</a></li>
@@ -43,77 +66,102 @@
         </div>
     </header>
 
+    <!-- ========================================================================
+        ! HERO SECTION - Full-screen banner with call-to-action buttons
+        ======================================================================== -->
     <main>
-        <!-- Hero banner section with call-to-action -->
         <section id="home" class="hero">
+            <!-- * Hero content (text and buttons) -->
             <div class="hero-content">
+                <!-- * Main heading with fade-in animation -->
                 <h1 class="hero-title fade-in-up">SLSU College of Industrial Technology</h1>
+                
+                <!-- * Subtitle/tagline with fade-in animation -->
                 <p class="hero-subtitle fade-in-up">We aspire to be a leading innovative, high-performing college that develops technologically proficient graduates</p>
                 
-                <!-- Primary action buttons -->
+                <!-- * Call-to-action buttons with fade-in animation -->
                 <div class="hero-buttons fade-in-up">
+                    <!-- * Primary action button (white background) -->
                     <a href="programs.html" class="btn primary">Explore Programs</a>
+                    <!-- * Secondary action button (transparent with border) -->
                     <a href="faculty.html" class="btn secondary">Meet the Developers</a>
                 </div>
             </div>
+            
+            <!-- * Decorative background grid pattern -->
             <div class="hero-bg"></div>
         </section>
     </main>
 
+    <!-- ========================================================================
+        ! ABOUT SECTION - Vision and Mission cards
+        ======================================================================== -->
     <main style="padding-top: 80px;">
-        <!-- Vision and Mission section -->
         <section id="about" class="section">
             <div class="container">
+                <!-- * Section heading -->
                 <h2 class="section-title animate-text">About Our Department</h2>
                 
-                <!-- Vision and Mission cards grid -->
+                <!-- * Grid layout for Vision and Mission cards (2 columns on desktop) -->
                 <div class="vision-mission-grid">
-                    <!-- Vision card -->
+                    <!-- * Vision card -->
                     <div class="vm-card animate-text">
+                        <!-- * Decorative emoji icon -->
                         <div class="vm-icon">🎯</div>
+                        <!-- * Card title -->
                         <h3>VISION</h3>
+                        <!-- * Vision statement -->
                         <p>We aspire to be a leading innovative, high-performing college that develops technologically proficient graduates.</p>
                     </div>
                     
-                    <!-- Mission card -->
+                    <!-- * Mission card -->
                     <div class="vm-card animate-text">
+                        <!-- * Decorative emoji icon -->
                         <div class="vm-icon">🚀</div>
+                        <!-- * Card title -->
                         <h3>MISSION</h3>
+                        <!-- * Mission statement -->
                         <p>Contribute in the skills development of the Filipino workers Innovatively proficient, productive, and versatile in all aspect of technology evolution Transform students with competence essentials for technological advancement.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Goals section with different background -->
+        <!-- ====================================================================
+            ! GOALS SECTION - Four departmental goals with decorative numbers
+            ==================================================================== -->
         <section id="goals" class="section bg-light">
             <div class="container">
+                <!-- * Section heading -->
                 <h2 class="section-title animate-text">Our Goals</h2>
                 
-                <!-- Goals cards grid -->
+                <!-- * Grid layout for goal cards (responsive, up to 4 columns) -->
                 <div class="goals-grid">
-                    <!-- Goal 1 -->
+                    <!-- * Goal 1: Research & Development -->
                     <div class="goal-card animate-text">
+                        <!-- * Large decorative number in background -->
                         <div class="goal-number">01</div>
+                        <!-- * Goal title -->
                         <h3>Research & Development</h3>
+                        <!-- * Goal description -->
                         <p>Develop qualified students to be effective instruments of inquiry and research with a sense of responsibility and commitment for the improvement of human condition-physical, mental and spiritual domains.</p>
                     </div>
                     
-                    <!-- Goal 2 -->
+                    <!-- * Goal 2: Functional Activities -->
                     <div class="goal-card animate-text">
                         <div class="goal-number">02</div>
                         <h3>Functional Activities</h3>
                         <p>Stimulate and maintain functional and productive activities in various disciplines.</p>
                     </div>
                     
-                    <!-- Goal 3 -->
+                    <!-- * Goal 3: Leadership Competence -->
                     <div class="goal-card animate-text">
                         <div class="goal-number">03</div>
                         <h3>Leadership Competence</h3>
                         <p>Acquire skills and leadership competence in various disciplines in order to accelerate community progress as trained professional in government and non-government agencies.</p>
                     </div>
                     
-                    <!-- Goal 4 -->
+                    <!-- * Goal 4: Professional Ethics -->
                     <div class="goal-card animate-text">
                         <div class="goal-number">04</div>
                         <h3>Professional Ethics</h3>
@@ -124,46 +172,56 @@
         </section>
     </main>
 
+    <!-- ========================================================================
+        ! CONTACT SECTION - Contact information and message form
+        ======================================================================== -->
     <main style="padding-top: 80px;">
-        <!-- Contact information and form section -->
         <section id="contact" class="section">
             <div class="container">
+                <!-- * Section heading -->
                 <h2 class="section-title animate-text">Contact Us</h2>
                 
-                <!-- Contact information and form grid -->
+                <!-- * Grid layout with contact info and form (2 columns on desktop) -->
                 <div class="contact-grid">
-                    <!-- Contact information column -->
+                    <!-- * Left column: Contact information -->
                     <div class="contact-info animate-text">
                         <h3>Get in Touch</h3>
                         
-                        <!-- Physical address -->
+                        <!-- * Physical address -->
                         <div class="contact-item">
                             <strong>Address:</strong>
                             <p>SLSU Main Campus, CIT Building<br>Lucban, Quezon</p>
                         </div>
                         
-                        <!-- Phone number -->
+                        <!-- * Phone number -->
                         <div class="contact-item">
                             <strong>Phone:</strong>
                             <p>(63+) 949 445 9745</p>
                         </div>
                         
-                        <!-- Email address -->
+                        <!-- * Email address -->
                         <div class="contact-item">
                             <strong>Email:</strong>
                             <p>rdaveandrew@slsu.edu.ph</p>
                         </div>
                     </div>
                     
-                    <!-- Contact message form -->
+                    <!-- * Right column: Contact form -->
                     <div class="contact-form animate-text">
                         <h3>Send us a message</h3>
                         
-                        <!-- Form with client-side validation -->
+                        <!-- * Form with client-side validation (novalidate for custom validation) -->
                         <form id="contactForm" novalidate>
+                            <!-- * Name input field -->
                             <input type="text" placeholder="Your Name" required aria-label="Your full name">
+                            
+                            <!-- * Email input field -->
                             <input type="email" placeholder="Your Email" required aria-label="Your email address">
+                            
+                            <!-- * Message textarea (5 rows tall) -->
                             <textarea placeholder="Your Message" rows="5" required aria-label="Your message"></textarea>
+                            
+                            <!-- * Submit button (styled as primary button) -->
                             <button type="submit" class="btn primary">Send Message</button>
                         </form>
                     </div>
@@ -172,14 +230,17 @@
         </section>
     </main>
 
-    <!-- Site footer -->
+    <!-- ========================================================================
+        ! FOOTER - Copyright and additional information
+        ======================================================================== -->
     <footer class="footer">
         <div class="container">
+            <!-- * Copyright text -->
             <p>&copy; 2025 SLSU Main Campus Lucban, Quezon. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- External JavaScript file -->
+    <!-- * Link to external JavaScript file (loaded at end for better performance) -->
     <script src="script.js"></script>
 </body>
 </html>
